@@ -1,8 +1,13 @@
 <div class="row">
   <div class="col-md-12 text-center">
-    <h3>Currently Playing</h3>
-    <img style="width: 200px;" src="{{albumArt}}" />
-    <h4 style="">{{currentTrack}}</h4>
-    <span style="display:block;">by {{currentArtist}}</span>
+    {{#if notPlaying}}
+      <h3>I'm not playing anything right now!</h3>
+      <img style="width: 600px;" src="/img/parappa-the-rapper.jpg" />
+    {{else}}
+      <h3>Currently Playing</h3>
+      <img style="width: 300px;" src="{{albumArt}}" />
+      <h4 style="">{{currentTrack}}</h4>
+      <span style="display:block;">by {{currentArtist}}</span>
+    {{/if}}
   </div>
 </div>
