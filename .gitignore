@@ -1,0 +1,7 @@
+coverage
+node_modules/
+config.json
+blacklist.txt
+settings.json
+static/tts
+lib/old_actions

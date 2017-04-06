@@ -1,0 +1,54 @@
+<h1>Clips</h1>
+<div class="row">
+  <div class="col-md-3">
+  </div>
+
+  <div class="col-md-9 text-right">
+    <form id='formid' style='float:right;' action="/clips/upload" method="POST" enctype="multipart/form-data">
+      <input id='fileid' type="file" name="file" hidden class='hidden'>
+      <input id='buttonid' type="button" value="Upload" class="btn btn-primary pull-right" >
+    </form>
+    <script>
+      document.getElementById('buttonid').addEventListener('click', openDialog);
+      function openDialog() {
+          document.getElementById('fileid').click();
+      }
+      document.getElementById('fileid').addEventListener('change', submitForm);
+      function submitForm() {
+          document.getElementById('formid').submit();
+      }
+    </script>
+  </div>
+</div>
+
+<table class="table table-condensed">
+  <thead>
+    <tr>
+      <th>Name</th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+  <tbody>
+    {{#each clips as |clip|}}
+      <tr>
+        <td>
+          <h4>{{clip.name}}</h4>
+        </td>
+        <td class='text-right'>
+          <audio controls style='vertical-align:middle;'>
+            <source src="{{clip.url}}" type="audio/mpeg">
+          Your browser does not support the audio element.
+          </audio>
+        </td>
+        <td width='100' class='text-right'>
+          <form id="delete-form-{{clip.name}}" action="/clips/{{clip.name}}/delete" method="GET">
+            <button type="submit" form="delete-form-{{clip.name}}" value="Delete" class="btn btn-danger">
+              <i class="icon remove"></i>Delete
+            </button>
+          </form>
+        </td>
+      </tr>
+    {{/each}}
+  </tbody>
+</table>
