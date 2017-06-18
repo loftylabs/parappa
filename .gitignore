@@ -6,3 +6,4 @@ settings.json
 static/tts
 lib/old_actions
 public/tts/
+semantic/
