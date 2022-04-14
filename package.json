@@ -16,7 +16,7 @@
     "@slack/client": "^3.5.1",
     "anesidora": "^1.2.0",
     "app-module-path": "^2.1.0",
-    "async": "^2.4.1",
+    "async": "^3.2.2",
     "aws-sdk": "^2.12.0",
     "blob-util": "^1.2.1",
     "body-parser": "^1.14.1",
